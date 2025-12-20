@@ -1,0 +1,452 @@
+header {
+    background: #333;
+    color: #fff;
+    padding: 1px 0;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+.hamburger {
+    display: block;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1002;  /* Above the menu */
+}
+
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 5px 0;
+    transition: all 0.3s ease;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+}
+
+/* Navigation Menu - Modified for hamburger */
+#nav-menu {
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 300px;
+    height: 100vh;
+    background-color: #333;
+    padding-top: 80px;
+    transition: 0.3s;
+    z-index: 1001;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+}
+#nav-menu.active {
+    right: 0;
+}
+
+#nav-menu.active nav ul li {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+nav ul li:nth-child(1) { transition-delay: 0.1s; }
+nav ul li:nth-child(2) { transition-delay: 0.2s; }
+nav ul li:nth-child(3) { transition-delay: 0.3s; }
+nav ul li:nth-child(4) { transition-delay: 0.4s; }
+nav ul li:nth-child(5) { transition-delay: 0.5s; }
+nav ul li:nth-child(6) { transition-delay: 0.6s; }
+
+
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+    display: block;
+    padding: 10px 0;
+    position: relative;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #ff6600;
+    transition: all 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ff6600;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+
+
+
+
+header h1 {
+    margin-bottom: 10px;
+    font-size: 2.5rem;
+}
+
+header p {
+    font-size: 1.2rem;
+}
+
+nav ul {
+    list-style: none;
+    margin-top: 20px;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
+/* Footer */
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+}
+.social-links a {
+    color: #fff;
+    margin: 0 10px;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #ff6600;
+}
+
+.phone-button {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    background: #ff6600;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    z-index: 100;
+}
+
+.phone-button i {
+    margin-right: 8px;
+    font-size: 1.2rem;
+    animation: shake 1s ease infinite;
+    animation-play-state: paused;
+}
+
+.phone-button span {
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.phone-button:hover {
+    background: #e65c00;
+    transform: translateY(-50%) scale(1.05);
+    box-shadow: 0 4px 15px rgba(255, 102, 0, 0.3);
+}
+
+.phone-button:hover i {
+    animation-play-state: running;
+}
+
+/* Modalités Section Styles */
+.modalites-section {
+    padding: 120px 20px 100px;  /* Added padding for fixed header and footer */
+    background-color: #f5f5f5;
+    min-height: calc(100vh - 200px);  /* Ensures content fills the space */
+}
+
+.modalites-section h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 40px;
+    font-size: 2.2rem;
+}
+
+.documents-card {
+    background: white;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.documents-card h3 {
+    color: #333;
+    margin-bottom: 25px;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.documents-card h3 i {
+    color: #ff6600;
+}
+
+.documents-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.documents-card ul li {
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #f8f8f8;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.documents-card ul li i {
+    color: #ff6600;
+    font-size: 1.2rem;
+    min-width: 24px;
+}
+
+.document-link {
+    margin-left: auto;
+    color: #ff6600;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.document-link:hover {
+    color: #e65c00;
+}
+
+.document-link i {
+    font-size: 0.8rem !important;
+    color: currentColor !important;
+}
+
+.important-note {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #fff3e0;
+    border-left: 4px solid #ff6600;
+    border-radius: 4px;
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.important-note i {
+    color: #ff6600;
+    font-size: 1.5rem;
+}
+
+.important-note p {
+    margin: 0;
+    color: #333;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+    .modalites-section {
+        padding: 100px 15px 80px;
+    }
+
+    .modalites-section h2 {
+        font-size: 1.8rem;
+    }
+
+    .documents-card {
+        padding: 20px;
+    }
+
+    .documents-card ul li {
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+    }
+
+    .document-link {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .modalites-section h2 {
+        font-size: 1.5rem;
+    }
+
+    .documents-card h3 {
+        font-size: 1.3rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .slider-section h2 {
+        font-size: 2rem;
+    }
+    
+    .slider-button {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .slider-button.prev {
+        left: -20px;
+    }
+    
+    .slider-button.next {
+        right: -20px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .slider-section h2 {
+        font-size: 1.5rem;
+    }
+    
+    .slider-button {
+        width: 30px;
+        height: 30px;
+    }
+    
+    .slider-button i {
+        font-size: 1rem;
+    }
+}
+
+
+@keyframes shake {
+    0%, 100% {
+        transform: rotate(0deg);
+    }
+    20%, 60% {
+        transform: rotate(-15deg);
+    }
+    40%, 80% {
+        transform: rotate(15deg);
+    }
+}
+
+
+
+/* Ajoutez cette media query à vos media queries existantes */
+@media screen and (max-width: 768px) {
+    .phone-button {
+        left: 10px;
+        padding: 8px 12px;
+    }
+    
+    .phone-button span {
+        font-size: 0.9rem;
+    }
+    
+    .phone-button i {
+        font-size: 1rem;
+    }
+    
+    /* Ajuster le padding du titre pour éviter le chevauchement */
+    header h1 {
+        padding: 0 70px;  /* Augmenté pour laisser de la place au bouton de téléphone */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .phone-button span {
+        display: none;  /* Cache le numéro sur très petit écran */
+    }
+    
+    .phone-button {
+        padding: 8px;
+    }
+    
+    .phone-button i {
+        margin: 0;
+    }
+}
+
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+        padding: 0 60px;  /* Space for hamburger */
+    }
+    
+    header p {
+        font-size: 1rem;
+    }
+    
+    body {
+        padding-bottom: 120px;
+    }
+
+    #nav-menu {
+        width: 250px;  /* Slightly narrower on mobile */
+        right: -250px;
+    }
+    
+    nav ul li a {
+        font-size: 1.1rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+    
+    #nav-menu {
+        width: 200px;  /* Even narrower on very small screens */
+        right: -200px;
+    }
+}

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modalités</title>
+    <link rel="stylesheet" href="modalite.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <!-- Phone Button -->
+            <a href="tel:0612345678" class="phone-button">
+                <i class="fas fa-phone"></i>
+                <span>06 12 34 56 78</span>
+            </a>
+
+            <h1 class="animate__animated animate__fadeInDown">Enlèvement d'Épaves Gratuit</h1>
+            <p class="animate__animated animate__fadeInUp">Service gratuit sur le Rhône et Marseille</p>
+            
+            <!-- Hamburger Menu Button -->
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <!-- Navigation Menu -->
+            <nav id="nav-menu">
+                <ul>
+                    <li><a href="Accueil.html#hero" onclick="closeMenu()">Accueil</a></li>
+                    <li><a href="Accueil.html#services" onclick="closeMenu()">Nos Services</a></li>
+                    <li><a href="Accueil.html#about" onclick="closeMenu()">À Propos</a></li>
+                    <li><a href="Accueil.html#process" onclick="closeMenu()">Notre Processus</a></li>
+                    <li><a href="Accueil.html#testimonials" onclick="closeMenu()">Témoignages</a></li>
+                    <li><a href="modalite.html" onclick="closeMenu()">Modalités</a></li>
+                    <li><a href="Accueil.html#contact" onclick="closeMenu()">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+   <!-- Main Content Section -->
+<main class="modalites-section">
+    <div class="container">
+        <h2 class="animate__animated animate__fadeInDown">Documents Nécessaires pour l'Enlèvement</h2>
+        
+        <div class="documents-card animate__animated animate__fadeInUp">
+            <h3><i class="fas fa-clipboard-list"></i> Liste des Documents Requis</h3>
+            <ul>
+                <li>
+                    <i class="fas fa-id-card"></i>
+                    <strong>Carte d'identité en cours de validité</strong> du propriétaire du véhicule
+                </li>
+                <li>
+                    <i class="fas fa-file-alt"></i>
+                    <strong>Certificat de non-gage</strong> 
+                    <a href="https://siv.interieur.gouv.fr/map-usg-ui/do/csa_retour_dem_certificat" 
+                       target="_blank" 
+                       class="document-link">
+                        Obtenir le certificat en ligne
+                        <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </li>
+                <li>
+                    <i class="fas fa-car"></i>
+                    <strong>Carte grise du véhicule</strong> (original)
+                </li>
+            </ul>
+
+            <div class="important-note">
+                <i class="fas fa-exclamation-circle"></i>
+                <p>Tous les documents originaux doivent être présentés le jour de l'enlèvement. 
+                   L'absence d'un document pourrait entraîner le report de l'intervention.</p>
+            </div>
+        </div>
+    </div>
+</main>
+    <script>
+        function toggleMenu() {
+            document.getElementById('nav-menu').classList.toggle('active');
+            document.querySelector('.hamburger').classList.toggle('active');
+        }
+
+        function closeMenu() {
+            document.getElementById('nav-menu').classList.remove('active');
+            document.querySelector('.hamburger').classList.remove('active');
+        }
+    </script>
+
+    
+       <!-- Footer -->
+   <footer>
+    <div class="container">
+        <p>&copy; 2025 Enlèvement d'Épaves Gratuit. Tous droits réservés.</p>
+        <p>Intervention sur le Rhône et Marseille.</p>
+        <div class="social-links">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+    </div>
+    </footer>
+    
+</body>
+</html>
+

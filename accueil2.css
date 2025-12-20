@@ -1,0 +1,876 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Styles de base */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #8C9B9F; /* Gris plus foncé */
+    padding-top: 70px;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Header et Navigation */
+header {
+    background: #8C9B9F; /* Gris plus foncé */
+    color: #fff;
+    padding: 1px 0;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+header h1 {
+    margin-bottom: 10px;
+    font-size: 2.5rem;
+}
+
+header p {
+    font-size: 1.2rem;
+}
+
+/* Menu Hamburger */
+.hamburger {
+    display: block;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1002;
+}
+
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 5px 0;
+    transition: all 0.3s ease;
+}
+
+#nav-menu {
+    position: fixed;
+    top: 0;
+    right: -300px; /* Menu caché par défaut */
+    width: 300px;
+    height: 100vh;
+    background-color: #8C9B9F; /* Gris plus foncé */
+    padding-top: 80px;
+    transition: 0.3s;
+    z-index: 1001;
+}
+
+#nav-menu.active {
+    right: 0; /* Menu visible quand actif */
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+}
+
+/* Navigation Menu */
+#nav-menu.active nav ul li {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+nav ul li:nth-child(1) { transition-delay: 0.1s; }
+nav ul li:nth-child(2) { transition-delay: 0.2s; }
+nav ul li:nth-child(3) { transition-delay: 0.3s; }
+nav ul li:nth-child(4) { transition-delay: 0.4s; }
+nav ul li:nth-child(5) { transition-delay: 0.5s; }
+nav ul li:nth-child(6) { transition-delay: 0.6s; }
+
+#nav-menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+#nav-menu ul li {
+    opacity: 0;
+    transform: translateX(20px);
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+    display: block;
+    padding: 10px 0;
+    position: relative;
+}
+
+#nav-menu.active ul li {
+    opacity: 1;
+    transform: translateX(0);
+    transition: all 0.3s ease;
+}
+
+#nav-menu ul li a {
+    display: block;
+    padding: 15px 30px;
+    color: #fff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+#nav-menu ul li a:hover {
+    background-color: #169B8E; /* Turquoise plus foncé */
+    padding-left: 40px;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #169B8E; /* Turquoise plus foncé */
+    transition: all 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #169B8E; /* Turquoise plus foncé */
+}
+
+nav ul {
+    list-style: none;
+    margin-top: 20px;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Section Hero */
+#hero {
+    background: url('1.png') no-repeat center center/cover;
+    color: #fff;
+    padding: 150px 0;
+    text-align: center;
+}
+
+#hero h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+#hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.slider-section {
+    padding: 120px 0 40px;  /* Augmenté pour donner plus d'espace sous le header */
+    background-color: #f5f5f5;
+    min-height: 400px;  /* Hauteur minimale fixe au lieu de vh */
+}
+
+.slider-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #8C9B9F; /* Gris plus foncé */
+    font-weight: bold;
+}
+
+.slider-container {
+    position: relative;
+    width: 90%;  /* Réduit légèrement pour les marges */
+    max-width: 1200px;
+    height: 400px;  /* Hauteur fixe pour le conteneur */
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.slider {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.slide {
+    display: none;
+    width: 100%;
+    height: 100%;
+}
+
+.slide.active {
+    display: block;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    max-height: 360px;  /* Limite la hauteur de l'image */
+}
+
+.slider-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #169B8E; /* Turquoise plus foncé */
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.slider-button:hover {
+    background: #169B8E; /* Turquoise plus foncé */
+    transform: translateY(-50%) scale(1.1);
+}
+
+.slider-button.prev {
+    left: 20px;
+}
+
+.slider-button.next {
+    right: 20px;
+}
+
+.slider-button i {
+    color: white;
+    font-size: 1.2rem;
+}
+
+.slider-section h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #8C9B9F; /* Gris plus foncé */
+}
+
+.intervention-description {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 40px;
+    color: #8C9B9F; /* Gris plus foncé */
+    font-size: 1.1rem;
+    line-height: 1.6;
+    padding: 0 20px;
+}
+.btn {
+    background: #169B8E; /* Turquoise plus foncé */
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.btn:hover {
+    background: #169B8E; /* Turquoise plus foncé */
+}
+
+/* Section Services */
+#services {
+    padding: 80px 0;
+    text-align: center;
+    background: #f4f4f4;
+}
+
+#services h2 {
+    margin-bottom: 40px;
+    font-size: 2rem;
+}
+
+.service-grid {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.service-card {
+    width: 30%;
+    margin-bottom: 20px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255, 102, 0, 0.1) 0%, rgba(255, 102, 0, 0) 100%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-15px) scale(1.03);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.service-card:hover::before {
+    opacity: 1;
+}
+
+.service-card:hover i {
+    transform: scale(1.2) rotate(360deg);
+    color: #169B8E; /* Turquoise plus foncé */
+}
+
+.service-card i {
+    font-size: 2rem;
+    color: #169B8E; /* Turquoise plus foncé */
+    margin-bottom: 15px;
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.service-card h3 {
+    margin: 15px 0;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.service-card:hover h3 {
+    color: #169B8E; /* Turquoise plus foncé */
+}
+
+.service-card p {
+    color: #666;
+    transition: color 0.3s ease;
+}
+
+.service-card:hover p {
+    color: #8C9B9F; /* Gris plus foncé */
+}
+
+/* Animations pour les témoignages */
+.testimonial-card {
+    opacity: 0;
+    transform: scale(0.9);
+    transition: all 0.5s ease;
+}
+
+.testimonial-card.animate {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Section À Propos */
+#about {
+    padding: 80px 0;
+    text-align: center;
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.about-text {
+    width: 60%;
+    text-align: left;
+}
+.btn {
+    display: inline-block; /* Assure un bon positionnement */
+    margin-top: 20px; /* Ajuste la distance avec le texte */
+    padding: 10px 20px; /* Pour un meilleur design */
+}
+
+.about-image {
+    width: 35%;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* Section Notre Processus */
+#process {
+    padding: 80px 0;
+    text-align: center;
+    background: #f4f4f4;
+    overflow: hidden; /* Pour gérer les éléments qui dépassent pendant l'animation */
+}
+
+.process-steps {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.step {
+    width: 22%;
+    margin-bottom: 20px;
+    opacity: 0;
+    transform: translateX(-100px);
+    transition: all 0.6s ease;
+}
+
+.step.animate {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.step:nth-child(1) { transition-delay: 0.1s; }
+.step:nth-child(2) { transition-delay: 0.3s; }
+.step:nth-child(3) { transition-delay: 0.5s; }
+.step:nth-child(4) { transition-delay: 0.7s; }
+
+.step i {
+    font-size: 2rem;
+    color: #169B8E; /* Turquoise plus foncé */
+    margin-bottom: 15px;
+}
+
+.step h3 {
+    margin: 15px 0;
+    font-size: 1.5rem;
+}
+
+/* Section Témoignages */
+#testimonials {
+    padding: 80px 0;
+    text-align: center;
+    background: #f4f4f4;
+    overflow: hidden;
+    position: relative;
+}
+
+.testimonial-carousel {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+}
+
+.testimonial-track {
+    display: flex;
+    animation: scroll 55s linear infinite;
+    width: max-content;
+}
+/* Dupliquer les témoignages pour un effet de boucle */
+.testimonial-track:hover {
+    animation-play-state: paused;
+}
+
+.testimonial-card {
+    flex: 0 0 auto;
+    width: 300px; /* Taille fixe pour uniformité */
+    margin: 0 20px;
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    white-space: normal;
+}
+
+.testimonial-card p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #8C9B9F; /* Gris plus foncé */
+    margin-bottom: 15px;
+}
+
+.testimonial-card span {
+    color: #169B8E; /* Turquoise plus foncé */
+    font-weight: bold;
+    font-style: italic;
+}
+
+/* Animation de défilement continu */
+@keyframes scroll {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+.testimonial-card.sliding-in {
+    animation: slideIn 1.5s ease-in-out forwards; /* Animation plus lente */
+}
+
+.testimonial-card.sliding-out {
+    animation: slideOut 1.5s ease-in-out forwards; /* Animation plus lente */
+}
+
+.modalites-section {
+    background: #f9f9f9;
+    padding: 80px 0;
+    text-align: center;
+}
+
+.modalites-desc {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.modalites-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.modalites-list li {
+    font-size: 1.1rem;
+    color: #8C9B9F; /* Gris plus foncé */
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modalites-list i {
+    color: #169B8E; /* Turquoise plus foncé */
+    margin-right: 10px;
+    font-size: 1.2rem;
+}
+
+.botn {
+    display: inline-block;
+    padding: 15px 25px;
+    background: #169B8E; /* Turquoise plus foncé */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.botn:hover {
+    background: #169B8E; /* Turquoise plus foncé */
+}
+
+.contact-section {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: white;
+    margin-bottom: 100px; /* Ajoute de l'espace avant le footer */
+}
+
+.contact-buttons {
+    margin-top: 20px;
+}
+
+.contact-buttons .btn {
+    display: inline-block;
+    padding: 15px 25px;
+    margin: 10px;
+    text-decoration: none;
+    color: white;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.call-btn {
+    background-color: #8C9B9F; /* Gris plus foncé */
+}
+
+.email-btn {
+    background-color: #8C9B9F; /* Gris plus foncé */
+}
+
+/* Footer */
+footer {
+    background: #8C9B9F; /* Gris plus foncé */
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+}
+
+.social-links a {
+    color: #fff;
+    margin: 0 10px;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #169B8E; /* Turquoise plus foncé */
+}
+
+.phone-button {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    background: #169B8E; /* Turquoise plus foncé */
+    color: white;
+    padding: 10px 15px;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    z-index: 100;
+}
+
+.phone-button i {
+    margin-right: 8px;
+    font-size: 1.2rem;
+    animation: shake 1s ease infinite;
+    animation-play-state: paused;
+}
+
+.phone-button span {
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.phone-button:hover {
+    background: #169B8E; /* Turquoise plus foncé */
+    transform: translateY(-50%) scale(1.05);
+    box-shadow: 0 4px 15px rgba(255, 102, 0, 0.3);
+}
+
+.phone-button:hover i {
+    animation-play-state: running;
+}
+
+@media screen and (max-width: 768px) {
+    .slider-section h2 {
+        font-size: 2rem;
+    }
+
+    .slider-button {
+        width: 40px;
+        height: 40px;
+    }
+
+    .slider-button.prev {
+        left: -20px;
+    }
+    
+    .slider-button.next {
+        right: -20px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .slider-section h2 {
+        font-size: 1.5rem;
+    }
+    
+    .slider-button {
+        width: 30px;
+        height: 30px;
+    }
+    
+    .slider-button i {
+        font-size: 1rem;
+    }
+}
+
+
+@keyframes shake {
+    0%, 100% {
+        transform: rotate(0deg);
+    }
+    20%, 60% {
+        transform: rotate(-15deg);
+    }
+    40%, 80% {
+        transform: rotate(15deg);
+    }
+}
+
+/* Animation pour le menu */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Ajoutez cette media query à vos media queries existantes */
+@media screen and (max-width: 768px) {
+    .phone-button {
+        left: 10px;
+        padding: 8px 12px;
+    }
+    
+    .phone-button span {
+        font-size: 0.9rem;
+    }
+    
+    .phone-button i {
+        font-size: 1rem;
+    }
+    
+    /* Ajuster le padding du titre pour éviter le chevauchement */
+    header h1 {
+        padding: 0 70px;  /* Augmenté pour laisser de la place au bouton de téléphone */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .phone-button span {
+        display: none;  /* Cache le numéro sur très petit écran */
+    }
+    
+    .phone-button {
+        padding: 8px;
+    }
+    
+    .phone-button i {
+        margin: 0;
+    }
+}
+
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+        padding: 0 60px;  /* Space for hamburger */
+    }
+    
+    header p {
+        font-size: 1rem;
+    }
+    
+    body {
+        padding-bottom: 120px;
+    }
+
+    #nav-menu {
+        width: 250px;  /* Slightly narrower on mobile */
+        right: -250px;
+    }
+    
+    nav ul li a {
+        font-size: 1.1rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+    
+    #nav-menu {
+        width: 200px;  /* Even narrower on very small screens */
+        right: -200px;
+    }
+}
+
+/* Responsive design pour les cartes de service */
+@media screen and (max-width: 992px) {
+    .service-card {
+        width: 45%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .service-card {
+        width: 100%;
+        margin: 10px 20px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .step {
+        width: 45%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .step {
+        width: 100%;
+        margin: 10px 20px;
+    }
+}
+/* Animation d'entrée */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Animation de sortie */
+@keyframes slideOut {
+    from {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+}
+
+/* Responsive */
+@media screen and (max-width: 992px) {
+    .testimonial-card {
+        flex: 0 0 calc(50% - 40px);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .testimonial-card {
+        flex: 0 0 calc(100% - 40px);
+    }
+}
