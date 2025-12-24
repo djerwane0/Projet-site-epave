@@ -15,7 +15,7 @@ header {
     position: absolute;
     top: 20px;
     right: 20px;
-    z-index: 1002;  /* Above the menu */
+    z-index: 1002; 
 }
 
 .hamburger span {
@@ -39,7 +39,6 @@ header {
     transform: rotate(-45deg) translate(7px, -6px);
 }
 
-/* Navigation Menu - Modified for hamburger */
 #nav-menu {
     position: fixed;
     top: 0;
@@ -133,7 +132,7 @@ nav ul li a {
 }
 
 
-/* Footer */
+
 footer {
     background: #333;
     color: #fff;
@@ -194,11 +193,10 @@ footer {
     animation-play-state: running;
 }
 
-/* Modalités Section Styles */
 .modalites-section {
-    padding: 120px 20px 100px;  /* Added padding for fixed header and footer */
+    padding: 120px 20px 100px; 
     background-color: #f5f5f5;
-    min-height: calc(100vh - 200px);  /* Ensures content fills the space */
+    min-height: calc(100vh - 200px);  
 }
 
 .modalites-section h2 {
@@ -294,7 +292,7 @@ footer {
     line-height: 1.5;
 }
 
-/* Media Queries */
+
 @media screen and (max-width: 768px) {
     .modalites-section {
         padding: 100px 15px 80px;
@@ -379,7 +377,6 @@ footer {
 
 
 
-/* Ajoutez cette media query à vos media queries existantes */
 @media screen and (max-width: 768px) {
     .phone-button {
         left: 10px;
@@ -394,15 +391,15 @@ footer {
         font-size: 1rem;
     }
     
-    /* Ajuster le padding du titre pour éviter le chevauchement */
+  
     header h1 {
-        padding: 0 70px;  /* Augmenté pour laisser de la place au bouton de téléphone */
+        padding: 0 70px; 
     }
 }
 
 @media screen and (max-width: 480px) {
     .phone-button span {
-        display: none;  /* Cache le numéro sur très petit écran */
+        display: none;  
     }
     
     .phone-button {
@@ -415,11 +412,10 @@ footer {
 }
 
 
-/* Media Queries */
 @media screen and (max-width: 768px) {
     header h1 {
         font-size: 2rem;
-        padding: 0 60px;  /* Space for hamburger */
+        padding: 0 60px; 
     }
     
     header p {
@@ -431,7 +427,7 @@ footer {
     }
 
     #nav-menu {
-        width: 250px;  /* Slightly narrower on mobile */
+        width: 250px; 
         right: -250px;
     }
     
@@ -446,7 +442,8 @@ footer {
     }
     
     #nav-menu {
-        width: 200px;  /* Even narrower on very small screens */
+        width: 200px; 
         right: -200px;
     }
+
 }
