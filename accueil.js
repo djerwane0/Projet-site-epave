@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Menu Hamburger
+
     const hamburger = document.querySelector('.hamburger');
     const navMenu = document.getElementById('nav-menu');
     
@@ -7,7 +7,6 @@ document.addEventListener('DOMContentLoaded', () => {
         hamburger.classList.toggle('active');
         navMenu.classList.toggle('active');
         
-        // Animation des liens du menu
         const menuItems = navMenu.querySelectorAll('li');
         menuItems.forEach((item, index) => {
             if (navMenu.classList.contains('active')) {
@@ -44,7 +43,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Slider
     let currentSlide = 0;
     const slides = document.querySelectorAll('.slide');
 
@@ -56,17 +54,15 @@ document.addEventListener('DOMContentLoaded', () => {
         slides[currentSlide].classList.add('active');
     }
 
-    // Fonction améliorée pour vérifier si un élément est visible
     function isElementInViewport(el) {
         const rect = el.getBoundingClientRect();
-        const threshold = 100; // Pixels avant que l'élément soit visible
+        const threshold = 100; 
         return (
             rect.top >= -threshold &&
             rect.top <= (window.innerHeight || document.documentElement.clientHeight) + threshold
         );
     }
 
-// Animation des cartes de service au scroll
 function animateServiceCards() {
     const cards = document.querySelectorAll('.service-card');
     cards.forEach((card, index) => {
@@ -79,7 +75,7 @@ function animateServiceCards() {
     });
 }
 
-    // Animation des étapes du processus améliorée
+
     function animateProcessSteps() {
         const steps = document.querySelectorAll('.step');
         steps.forEach((step, index) => {
@@ -91,7 +87,6 @@ function animateServiceCards() {
         });
     }
 
-    // Animation des témoignages améliorée
     function animateTestimonials() {
         const testimonials = document.querySelectorAll('.testimonial-card');
         testimonials.forEach((testimonial, index) => {
@@ -103,7 +98,6 @@ function animateServiceCards() {
         });
     }
 
-    // Animation douce du scroll
     function smoothScroll(event) {
         if (event.target.hash) {
             event.preventDefault();
@@ -119,12 +113,11 @@ function animateServiceCards() {
         }
     }
 
-    // Activation du scroll fluide
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', smoothScroll);
     });
 
-    // Écouteur de scroll optimisé
+ 
     let scrollTimeout;
     window.addEventListener('scroll', () => {
         if (scrollTimeout) {
@@ -138,12 +131,10 @@ function animateServiceCards() {
         });
     });
 
-    // Déclencher les animations initiales
     animateServiceCards();
     animateProcessSteps();
     animateTestimonials();
 
-    // Exposer les fonctions nécessaires globalement
     window.changeSlide = changeSlide;
     window.toggleMenu = toggleMenu;
     window.closeMenu = closeMenu;
@@ -151,7 +142,6 @@ function animateServiceCards() {
 
 
 
-/* JavaScript pour cloner les témoignages et assurer un défilement fluide */
 document.addEventListener("DOMContentLoaded", function () {
     const track = document.querySelector(".testimonial-track");
     const testimonials = Array.from(track.children);
@@ -160,3 +150,4 @@ document.addEventListener("DOMContentLoaded", function () {
         track.appendChild(clone);
     });
 });
+
