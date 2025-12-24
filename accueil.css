@@ -1,11 +1,9 @@
-/* Reset CSS */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Styles de base */
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
@@ -19,7 +17,6 @@ body {
     margin: 0 auto;
 }
 
-/* Header et Navigation */
 header {
     background: #333;
     color: #fff;
@@ -41,7 +38,6 @@ header p {
     font-size: 1.2rem;
 }
 
-/* Menu Hamburger */
 .hamburger {
     display: block;
     cursor: pointer;
@@ -63,7 +59,7 @@ header p {
 #nav-menu {
     position: fixed;
     top: 0;
-    right: -300px; /* Menu caché par défaut */
+    right: -300px;
     width: 300px;
     height: 100vh;
     background-color: #333;
@@ -73,7 +69,7 @@ header p {
 }
 
 #nav-menu.active {
-    right: 0; /* Menu visible quand actif */
+    right: 0; 
 }
 
 .hamburger.active span:nth-child(1) {
@@ -89,7 +85,6 @@ header p {
 }
 
 
-/* Navigation Menu */
 #nav-menu {
     position: fixed;
     top: 0;
@@ -194,7 +189,6 @@ nav ul li a {
     font-weight: bold;
 }
 
-/* Section Hero */
 #hero {
     background: url('1.png') no-repeat center center/cover;
     color: #fff;
@@ -213,9 +207,9 @@ nav ul li a {
 }
 
 .slider-section {
-    padding: 120px 0 40px;  /* Augmenté pour donner plus d'espace sous le header */
+    padding: 120px 0 40px;
     background-color: #f5f5f5;
-    min-height: 400px;  /* Hauteur minimale fixe au lieu de vh */
+    min-height: 400px;
 }
 
 .slider-section h2 {
@@ -228,9 +222,9 @@ nav ul li a {
 
 .slider-container {
     position: relative;
-    width: 90%;  /* Réduit légèrement pour les marges */
+    width: 90%;
     max-width: 1200px;
-    height: 400px;  /* Hauteur fixe pour le conteneur */
+    height: 400px; 
     margin: 0 auto;
     display: flex;
     align-items: center;
@@ -260,7 +254,7 @@ nav ul li a {
     width: 100%;
     height: 100%;
     object-fit: contain;
-    max-height: 360px;  /* Limite la hauteur de l'image */
+    max-height: 360px;
 }
 
 .slider-button {
@@ -327,7 +321,6 @@ nav ul li a {
     background: #e65c00;
 }
 
-/* Section Services */
 #services {
     padding: 80px 0;
     text-align: center;
@@ -409,7 +402,6 @@ nav ul li a {
     color: #333;
 }
 
-/* Animations pour les témoignages */
 .testimonial-card {
     opacity: 0;
     transform: scale(0.9);
@@ -421,7 +413,6 @@ nav ul li a {
     transform: scale(1);
 }
 
-/* Section À Propos */
 #about {
     padding: 80px 0;
     text-align: center;
@@ -438,9 +429,9 @@ nav ul li a {
     text-align: left;
 }
 .btn {
-    display: inline-block; /* Assure un bon positionnement */
-    margin-top: 20px; /* Ajuste la distance avec le texte */
-    padding: 10px 20px; /* Pour un meilleur design */
+    display: inline-block; 
+    margin-top: 20px; 
+    padding: 10px 20px;/
 }
 
 .about-image {
@@ -452,12 +443,11 @@ nav ul li a {
     border-radius: 10px;
 }
 
-/* Section Notre Processus */
 #process {
     padding: 80px 0;
     text-align: center;
     background: #f4f4f4;
-    overflow: hidden; /* Pour gérer les éléments qui dépassent pendant l'animation */
+    overflow: hidden;
 }
 
 .process-steps {
@@ -496,7 +486,6 @@ nav ul li a {
 }
 
 
-/* Section Témoignages */
 #testimonials {
     padding: 80px 0;
     text-align: center;
@@ -517,14 +506,13 @@ nav ul li a {
     animation: scroll 55s linear infinite;
     width: max-content;
 }
-/* Dupliquer les témoignages pour un effet de boucle */
 .testimonial-track:hover {
     animation-play-state: paused;
 }
 
 .testimonial-card {
     flex: 0 0 auto;
-    width: 300px; /* Taille fixe pour uniformité */
+    width: 300px;
     margin: 0 20px;
     background: #fff;
     padding: 30px;
@@ -547,7 +535,6 @@ nav ul li a {
     font-style: italic;
 }
 
-/* Animation de défilement continu */
 @keyframes scroll {
     from {
         transform: translateX(0);
@@ -560,12 +547,11 @@ nav ul li a {
 
 
 .testimonial-card.sliding-in {
-    animation: slideIn 1.5s ease-in-out forwards; /* Animation plus lente */
+    animation: slideIn 1.5s ease-in-out forwards; 
 }
 
 .testimonial-card.sliding-out {
-    animation: slideOut 1.5s ease-in-out forwards; /* Animation plus lente */
-}
+    animation: slideOut 1.5s ease-in-out forwards;
 
 .modalites-section {
     background: #f9f9f9;
@@ -620,7 +606,7 @@ nav ul li a {
     text-align: center;
     padding: 40px 20px;
     background-color: white ;
-    margin-bottom: 100px; /* Ajoute de l'espace avant le footer */
+    margin-bottom: 100px;
 }
 .contact-buttons {
     margin-top: 20px;
@@ -637,15 +623,14 @@ nav ul li a {
 }
 
 .call-btn {
-    background-color: #333; /* Vert pour appel */
+    background-color: #333; 
 }
 
 .email-btn {
-    background-color: #333; /* Bleu pour email */
+    background-color: #333; 
 }
 
 
-/* Footer */
 footer {
     background: #333;
     color: #fff;
@@ -753,7 +738,6 @@ footer {
     }
 }
 
-/* Animation pour le menu */
 @keyframes slideIn {
     from {
         opacity: 0;
@@ -765,7 +749,7 @@ footer {
     }
 }
 
-/* Ajoutez cette media query à vos media queries existantes */
+
 @media screen and (max-width: 768px) {
     .phone-button {
         left: 10px;
@@ -780,15 +764,14 @@ footer {
         font-size: 1rem;
     }
     
-    /* Ajuster le padding du titre pour éviter le chevauchement */
     header h1 {
-        padding: 0 70px;  /* Augmenté pour laisser de la place au bouton de téléphone */
+        padding: 0 70px; 
     }
 }
 
 @media screen and (max-width: 480px) {
     .phone-button span {
-        display: none;  /* Cache le numéro sur très petit écran */
+        display: none; 
     }
     
     .phone-button {
@@ -805,7 +788,7 @@ footer {
 @media screen and (max-width: 768px) {
     header h1 {
         font-size: 2rem;
-        padding: 0 60px;  /* Space for hamburger */
+        padding: 0 60px;
     }
     
     header p {
@@ -817,7 +800,7 @@ footer {
     }
 
     #nav-menu {
-        width: 250px;  /* Slightly narrower on mobile */
+        width: 250px; 
         right: -250px;
     }
     
@@ -832,12 +815,11 @@ footer {
     }
     
     #nav-menu {
-        width: 200px;  /* Even narrower on very small screens */
+        width: 200px; 
         right: -200px;
     }
 }
 
-/* Responsive design pour les cartes de service */
 @media screen and (max-width: 992px) {
     .service-card {
         width: 45%;
@@ -863,7 +845,7 @@ footer {
         margin: 10px 20px;
     }
 }
-/* Animation d'entrée */
+
 @keyframes slideIn {
     from {
         opacity: 0;
@@ -875,7 +857,7 @@ footer {
     }
 }
 
-/* Animation de sortie */
+
 @keyframes slideOut {
     from {
         opacity: 1;
@@ -887,7 +869,7 @@ footer {
     }
 }
 
-/* Responsive */
+
 @media screen and (max-width: 992px) {
     .testimonial-card {
         flex: 0 0 calc(50% - 40px);
@@ -899,3 +881,4 @@ footer {
         flex: 0 0 calc(100% - 40px);
     }
 }
+
